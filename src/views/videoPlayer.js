@@ -8,7 +8,7 @@ var VideoPlayerView = Backbone.View.extend({
   },
 
   checkSelection: function(selection) {
-    console.log(selection)
+    console.log(selection);
     this.render(selection.attributes);
   },
 
