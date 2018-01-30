@@ -6,6 +6,7 @@ var AppView = Backbone.View.extend({
     this.videos = new Videos(window.exampleVideoData);
     // var mainVideo = this.videos.at(0).attributes;
     // console.log(this.videos);
+    // this.videos.search();
     this.render();
     
   },
