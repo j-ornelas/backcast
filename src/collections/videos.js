@@ -3,12 +3,11 @@ var Videos = Backbone.Collection.extend({
   model: Video,
 
   initialize: function() {
-    this.search('justin bieber');
+    this.search('hack reactor');
   },
 
   search: function(query) {
-
-    Backbone.ajax({
+    this.fetch({
       url: 'https://www.googleapis.com/youtube/v3/search',
       type: 'GET',
       data: $.extend({
@@ -20,13 +19,16 @@ var Videos = Backbone.Collection.extend({
 
       contentType: 'application/json',
       success: function(data) {
-        console.log(data);
+      
         console.log('data recieved!');
-        return data.items.models;
       },
       error: function(data) {
         console.log('FAILED to load data!');
       }
     });
+  }, 
+  parse: function(response) {
+    console.log(response);
+    return response.items;
   }
 });
